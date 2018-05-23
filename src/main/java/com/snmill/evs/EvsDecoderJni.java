@@ -1,6 +1,6 @@
 package com.snmill.evs;
 
-public class EvsDecoderJni {
+public class EvsDecoderJni extends EvsJni {
 
     public static native long dCreate();
 
