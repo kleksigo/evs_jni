@@ -1,4 +1,4 @@
-#include "com_snmill_evs_EvsDecoderJni.h"
+#include <com_snmill_evs_EvsDecoderJni.h>
 
 
 #ifdef __cplusplus

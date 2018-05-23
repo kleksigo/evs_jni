@@ -3,3 +3,5 @@
 .idea/
 target/
 
+/evsinc/evsinc/build/
+/evsinc/evsinc/dist/
