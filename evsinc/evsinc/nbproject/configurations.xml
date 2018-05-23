@@ -12,6 +12,8 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>com_snmill_evs_EvsDecoderJni.c</itemPath>
+      <itemPath>com_snmill_evs_EvsEncoderJni.c</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -35,6 +37,10 @@
       </toolsSet>
       <compileType>
       </compileType>
+      <item path="com_snmill_evs_EvsDecoderJni.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="com_snmill_evs_EvsEncoderJni.c" ex="false" tool="0" flavor2="0">
+      </item>
     </conf>
     <conf name="Release" type="2">
       <toolsSet>
@@ -45,6 +51,21 @@
       <compileType>
         <cTool>
           <developmentMode>5</developmentMode>
+          <architecture>2</architecture>
+          <incDir>
+            <pElem>/opt/jdk1.8.0_171/include</pElem>
+            <pElem>/opt/jdk1.8.0_171/include/linux</pElem>
+            <pElem>../../../evs_fixed_point_26442-e10/c-code/basic_math</pElem>
+            <pElem>../../../evs_fixed_point_26442-e10/c-code/basic_op</pElem>
+            <pElem>../../../evs_fixed_point_26442-e10/c-code/lib_com</pElem>
+            <pElem>../../../evs_fixed_point_26442-e10/c-code/lib_dec</pElem>
+            <pElem>../../../evs_fixed_point_26442-e10/c-code/lib_enc</pElem>
+            <pElem>../../src/main/resources/includes</pElem>
+          </incDir>
+          <incFile>
+            <pElem>../../src/main/resources/includes/com_snmill_evs_EvsDecoderJni.h</pElem>
+            <pElem>../../src/main/resources/includes/com_snmill_evs_EvsEncoderJni.h</pElem>
+          </incFile>
         </cTool>
         <ccTool>
           <developmentMode>5</developmentMode>
@@ -55,7 +76,20 @@
         <asmTool>
           <developmentMode>5</developmentMode>
         </asmTool>
+        <linkerTool>
+          <linkerAddLib>
+            <pElem>../../../evs_fixed_point_26442-e10/c-code</pElem>
+          </linkerAddLib>
+          <linkerLibItems>
+            <linkerLibFileItem>../../../evs_fixed_point_26442-e10/c-code/EVS_cod.so</linkerLibFileItem>
+            <linkerLibFileItem>../../../evs_fixed_point_26442-e10/c-code/EVS_dec.so</linkerLibFileItem>
+          </linkerLibItems>
+        </linkerTool>
       </compileType>
+      <item path="com_snmill_evs_EvsDecoderJni.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="com_snmill_evs_EvsEncoderJni.c" ex="false" tool="0" flavor2="0">
+      </item>
     </conf>
   </confs>
 </configurationDescriptor>

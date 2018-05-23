@@ -34,7 +34,9 @@ include Makefile
 OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
-OBJECTFILES=
+OBJECTFILES= \
+	${OBJECTDIR}/com_snmill_evs_EvsDecoderJni.o \
+	${OBJECTDIR}/com_snmill_evs_EvsEncoderJni.o
 
 
 # C Compiler Flags
@@ -60,6 +62,16 @@ LDLIBSOPTIONS=
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libevsinc.${CND_DLIB_EXT}: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libevsinc.${CND_DLIB_EXT} ${OBJECTFILES} ${LDLIBSOPTIONS} -shared -fPIC
+
+${OBJECTDIR}/com_snmill_evs_EvsDecoderJni.o: com_snmill_evs_EvsDecoderJni.c
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/com_snmill_evs_EvsDecoderJni.o com_snmill_evs_EvsDecoderJni.c
+
+${OBJECTDIR}/com_snmill_evs_EvsEncoderJni.o: com_snmill_evs_EvsEncoderJni.c
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/com_snmill_evs_EvsEncoderJni.o com_snmill_evs_EvsEncoderJni.c
 
 # Subprojects
 .build-subprojects:

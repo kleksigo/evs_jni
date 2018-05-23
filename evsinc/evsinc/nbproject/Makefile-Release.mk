@@ -34,11 +34,13 @@ include Makefile
 OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
-OBJECTFILES=
+OBJECTFILES= \
+	${OBJECTDIR}/com_snmill_evs_EvsDecoderJni.o \
+	${OBJECTDIR}/com_snmill_evs_EvsEncoderJni.o
 
 
 # C Compiler Flags
-CFLAGS=
+CFLAGS=-m64
 
 # CC Compiler Flags
 CCFLAGS=
@@ -51,15 +53,29 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=
+LDLIBSOPTIONS=-L../../../evs_fixed_point_26442-e10/c-code ../../../evs_fixed_point_26442-e10/c-code/EVS_cod.so ../../../evs_fixed_point_26442-e10/c-code/EVS_dec.so
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
 	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libevsinc.${CND_DLIB_EXT}
 
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libevsinc.${CND_DLIB_EXT}: ../../../evs_fixed_point_26442-e10/c-code/EVS_cod.so
+
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libevsinc.${CND_DLIB_EXT}: ../../../evs_fixed_point_26442-e10/c-code/EVS_dec.so
+
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libevsinc.${CND_DLIB_EXT}: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libevsinc.${CND_DLIB_EXT} ${OBJECTFILES} ${LDLIBSOPTIONS} -shared -fPIC
+
+${OBJECTDIR}/com_snmill_evs_EvsDecoderJni.o: com_snmill_evs_EvsDecoderJni.c
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -I/opt/jdk1.8.0_171/include -I/opt/jdk1.8.0_171/include/linux -I../../../evs_fixed_point_26442-e10/c-code/basic_math -I../../../evs_fixed_point_26442-e10/c-code/basic_op -I../../../evs_fixed_point_26442-e10/c-code/lib_com -I../../../evs_fixed_point_26442-e10/c-code/lib_dec -I../../../evs_fixed_point_26442-e10/c-code/lib_enc -I../../src/main/resources/includes -include ../../src/main/resources/includes/com_snmill_evs_EvsDecoderJni.h -include ../../src/main/resources/includes/com_snmill_evs_EvsEncoderJni.h -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/com_snmill_evs_EvsDecoderJni.o com_snmill_evs_EvsDecoderJni.c
+
+${OBJECTDIR}/com_snmill_evs_EvsEncoderJni.o: com_snmill_evs_EvsEncoderJni.c
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -I/opt/jdk1.8.0_171/include -I/opt/jdk1.8.0_171/include/linux -I../../../evs_fixed_point_26442-e10/c-code/basic_math -I../../../evs_fixed_point_26442-e10/c-code/basic_op -I../../../evs_fixed_point_26442-e10/c-code/lib_com -I../../../evs_fixed_point_26442-e10/c-code/lib_dec -I../../../evs_fixed_point_26442-e10/c-code/lib_enc -I../../src/main/resources/includes -include ../../src/main/resources/includes/com_snmill_evs_EvsDecoderJni.h -include ../../src/main/resources/includes/com_snmill_evs_EvsEncoderJni.h -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/com_snmill_evs_EvsEncoderJni.o com_snmill_evs_EvsEncoderJni.c
 
 # Subprojects
 .build-subprojects:
@@ -67,6 +83,8 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libevsinc.${CND_DLIB_EXT}: ${OBJECTFI
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
+	${RM} -r ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/EVS_dec.so ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/EVS_cod.so
+	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libevsinc.${CND_DLIB_EXT}
 
 # Subprojects
 .clean-subprojects:
