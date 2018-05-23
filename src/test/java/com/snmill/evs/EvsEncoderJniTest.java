@@ -15,7 +15,8 @@ public class EvsEncoderJniTest {
     @Test
     public void encoderUpDown() {
         long address = EvsEncoderJni.eCreate();
-        System.out.println("Address: "+address);
+        System.out.println("Created Address: "+address);
+        EvsEncoderJni.eDestroy(address);
     }
 
 }

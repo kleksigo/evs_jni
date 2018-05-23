@@ -80,12 +80,37 @@
           <linkerAddLib>
             <pElem>../../../evs_fixed_point_26442-e10/c-code</pElem>
           </linkerAddLib>
+          <linkerDepDynSerchKind>3</linkerDepDynSerchKind>
+          <linkerCopySharedLibs>true</linkerCopySharedLibs>
           <linkerLibItems>
-            <linkerLibFileItem>../../../evs_fixed_point_26442-e10/c-code/EVS_cod.so</linkerLibFileItem>
-            <linkerLibFileItem>../../../evs_fixed_point_26442-e10/c-code/EVS_dec.so</linkerLibFileItem>
+            <linkerLibFileItem>/media/sf_code/evs_fixed_point_26442-e10/c-code/EVS_cod.so</linkerLibFileItem>
+            <linkerLibFileItem>/media/sf_code/evs_fixed_point_26442-e10/c-code/EVS_dec.so</linkerLibFileItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>
+      <packaging>
+        <packType>Tar</packType>
+        <packFileList>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}lib/EVS_dec.so"
+                            from="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/EVS_dec.so"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}lib/EVS_cod.so"
+                            from="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/EVS_cod.so"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}lib/${OUTPUT_BASENAME}"
+                            from="${OUTPUT_PATH}"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+        </packFileList>
+      </packaging>
       <item path="com_snmill_evs_EvsDecoderJni.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="com_snmill_evs_EvsEncoderJni.c" ex="false" tool="0" flavor2="0">

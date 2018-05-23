@@ -61,6 +61,14 @@ mkdir -p ${NBTMPDIR}
 # Copy files and create directories and links
 cd "${TOP}"
 makeDirectory "${NBTMPDIR}/libevsinc.so/lib"
+copyFileToTmpDir "${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/EVS_dec.so" "${NBTMPDIR}/${PACKAGE_TOP_DIR}lib/EVS_dec.so" 0644
+
+cd "${TOP}"
+makeDirectory "${NBTMPDIR}/libevsinc.so/lib"
+copyFileToTmpDir "${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/EVS_cod.so" "${NBTMPDIR}/${PACKAGE_TOP_DIR}lib/EVS_cod.so" 0644
+
+cd "${TOP}"
+makeDirectory "${NBTMPDIR}/libevsinc.so/lib"
 copyFileToTmpDir "${OUTPUT_PATH}" "${NBTMPDIR}/${PACKAGE_TOP_DIR}lib/${OUTPUT_BASENAME}" 0644
 
 

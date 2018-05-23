@@ -53,15 +53,17 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-L../../../evs_fixed_point_26442-e10/c-code ../../../evs_fixed_point_26442-e10/c-code/EVS_cod.so ../../../evs_fixed_point_26442-e10/c-code/EVS_dec.so
+LDLIBSOPTIONS=-L../../../evs_fixed_point_26442-e10/c-code /media/sf_code/evs_fixed_point_26442-e10/c-code/EVS_cod.so /media/sf_code/evs_fixed_point_26442-e10/c-code/EVS_dec.so
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
 	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libevsinc.${CND_DLIB_EXT}
+	${CP} /media/sf_code/evs_fixed_point_26442-e10/c-code/EVS_dec.so ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
+	${CP} /media/sf_code/evs_fixed_point_26442-e10/c-code/EVS_cod.so ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libevsinc.${CND_DLIB_EXT}: ../../../evs_fixed_point_26442-e10/c-code/EVS_cod.so
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libevsinc.${CND_DLIB_EXT}: /media/sf_code/evs_fixed_point_26442-e10/c-code/EVS_cod.so
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libevsinc.${CND_DLIB_EXT}: ../../../evs_fixed_point_26442-e10/c-code/EVS_dec.so
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libevsinc.${CND_DLIB_EXT}: /media/sf_code/evs_fixed_point_26442-e10/c-code/EVS_dec.so
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libevsinc.${CND_DLIB_EXT}: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
